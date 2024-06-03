@@ -6,6 +6,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 User = get_user_model()
 
 
+
 class Auto(models.Model):
     objects = None
     STATUS_OPTIONS = (

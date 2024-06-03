@@ -11,3 +11,4 @@ def cars_list(request):
     }
     return render(request, 'car_list.html', context)
 
+
