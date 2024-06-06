@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import cars_list
+from .views import AutoListView
 
 urlpatterns = [
-    path('', cars_list, name='cars_list'),
+    path('', AutoListView.as_view(), name='cars_list'),
 ]
 
