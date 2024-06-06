@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'main.html' %}
+
+{% block content %}
 {% if cars %}
     {% for car in cars %}
         <a href={{ car.link }}><b>{{ car.brand}} {{ car.model }}</b><i>{{ car.price_usd }}</i></a>
@@ -14,7 +10,7 @@
     {% else %}
     <h2>Нет записей</h2>
 {% endif %}
+{% endblock %}
 
 
-</body>
-</html>
+
