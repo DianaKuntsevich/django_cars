@@ -3,7 +3,7 @@
 {% block content %}
 {% if cars %}
     {% for car in cars %}
-        <a href={{ car.link }}><b>{{ car.brand}} {{ car.model }}</b><i>{{ car.price_usd }}</i></a>
+        <a href={{ car.get_absolute_url}}><b>{{ car.brand}} {{ car.model }}</b><i>{{ car.price_usd }}</i></a>
         <br>
     {% endfor %}
     

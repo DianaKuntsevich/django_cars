@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth import get_user_model
+from django.urls import reverse
+
 from mptt.models import MPTTModel, TreeForeignKey
 
 User = get_user_model()
@@ -92,6 +94,9 @@ class Auto(models.Model):
 
     def __str__(self):
         return f'{self.brand} | {self.model}'
+
+    def get_absolute_url(self):
+        return reverse('cars_detail', kwargs={'pk': self.id_car})
 
 
 class Image(models.Model):
