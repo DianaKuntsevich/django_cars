@@ -1,7 +1,10 @@
 {% extends 'main.html' %}
+{% block title %}{{ data.brand }}{{ data.model }}{% endblock %}
 
 {% block content %}
     <strong>{{ data.model }}</strong>
+    <br>
     <p>{{ data.description }}</p>
+    
 
 {% endblock %}

@@ -96,7 +96,7 @@ class Auto(models.Model):
         return f'{self.brand} | {self.model}'
 
     def get_absolute_url(self):
-        return reverse('cars_detail', kwargs={'pk': self.id_car})
+        return reverse('cars_detail', kwargs={'pk': self.id})
 
 
 class Image(models.Model):

@@ -16,7 +16,6 @@ class AutoListView(ListView):
 
 
 
-
 class AutoDetailView(DetailView):
     model = Auto
     template_name = 'aw_cars/car_detail.html'
@@ -26,3 +25,8 @@ class AutoDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = self.object.model
         return context
+
+
+
+
+
