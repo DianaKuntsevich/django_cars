@@ -2,6 +2,217 @@
 {% block title %}{{ data.brand }}{{ data.model }}{% endblock %}
 
 {% block content %}
+    <section class="w-100 p-4" style="background-color: royalblue ">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card text-black">
+
+                    <div class="card-body">
+                        
+                            <h5 class="card-title">
+                                {{ data.brand }}{{ data.model }}{{ data.generation_with_years }}{{ data.city_location }}</h5>
+                            <p><strong><font size="6"> Описание</font></strong></p>
+                            <p class="text-muted md-4">{{ data.description }}</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+        <div class="container px-4 text-center">
+            <p><strong><font size="6"> {{ data.exchange }}</font></strong></p>
+        </div>    
+
+
+        </div>
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col">
+                    <p><strong><font size="6">Экстерьер</font></strong></p>
+                    {% if data.alloy_wheels %}
+                        <div class="row justify-content-center">
+                            <span>Литые диски</span>
+                        </div>
+                    {% endif %}
+                    <p><strong><font size="6">Системы безопасности</font></strong></p>
+                    {% if data.abs %}
+                        <div class="row justify-content-center">
+                            <span>Система безопасности ABS</span>
+                        </div>
+                    {% endif %}
+                    {% if data.esp %}
+                        <div class="row justify-content-center">
+                            <span>Система безопасности ESP</span>
+                        </div>
+                    {% endif %}
+                    {% if data.anti_slip_system %}
+                        <div class="row justify-content-center">
+                            <span>Система безопасности антипробуксовочная</span>
+                        </div>
+                    {% endif %}
+                    {% if data.immobilizer %}
+                        <div class="row justify-content-center">
+                            <span>Система безопасности иммобилайзер</span>
+                        </div>
+                    {% endif %}
+                    <p><strong><font size="6">Подушки</font></strong></p>
+                    {% if data.front_safebags %}
+                        <div class="row justify-content-center">
+                            <span>Подушки передние</span>
+                        </div>
+                    {% endif %}
+                    {% if data.side_safebags %}
+                        <div class="row justify-content-center">
+                            <span>Подушки боковые</span>
+                        </div>
+                    {% endif %}
+                    {% if data.rear_safebags %}
+                        <div class="row justify-content-center">
+                            <span>Подушки задние</span>
+                        </div>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    <p><strong><font size="6">Системы помощи</font></strong></p>
+                    {% if data.rain_detector %}
+                        <div class="row justify-content-center">
+                            <span>Датчик дождя</span>
+                        </div>
+                    {% endif %}
+                    {% if data.rear_view_camera %}
+                        <div class="row justify-content-center">
+                            <span>Камера заднего вида</span>
+                        </div>
+                    {% endif %}
+                    {% if data.parktronics %}
+                        <div class="row justify-content-center">
+                            <span>Парктроники</span>
+                        </div>
+                    {% endif %}
+
+                    <p><strong><font size="6">Интерьер</font></strong></p>
+                    {% if data.hatch %}
+                        <div class="row justify-content-center">
+                            <span>Люк</span>
+                        </div>
+                    {% endif %}
+                    {% if data.number_of_seats %}
+                        <div class="row justify-content-center">
+                            <span>{{ data.number_of_seats }}</span>
+                        </div>
+                    {% endif %}
+                    {% if data.interior_color %}
+                        <div class="row justify-content-center">
+                            <span>{{ data.interior_color }}</span>
+                        </div>
+                    {% endif %}
+                    {% if data.interior_material %}
+                        <div class="row justify-content-center">
+                            <span>{{ data.interior_material }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    <p><strong><font size="6">Комфорт</font></strong></p>
+                    {% if data.cruise_control %}
+                        <div class="row justify-content-center">
+                            <span>Круиз-контроль</span>
+                        </div>
+                    {% endif %}
+                    {% if data.steering_wheel_media_control %}
+                        <div class="row justify-content-center">
+                            <span>Управление мультимедиа с руля</span>
+                        </div>
+                    {% endif %}
+                    {% if data.electro_seat_adjustment %}
+                        <div class="row justify-content-center">
+                            <span>Электрорегулировка сидений</span>
+                        </div>
+                    {% endif %}
+                    {% if data.front_glass_lift %}
+                        <div class="row justify-content-center">
+                            <span>Передние электро-стеклоподъёмники</span>
+                        </div>
+                    {% endif %}
+                    {% if data.rear_glass_lift %}
+                        <div class="row justify-content-center">
+                            <span>Задние электро-стеклоподъёмники</span>
+                        </div>
+                    {% endif %}
+                    <p><strong><font size="6">Обогрев</font></strong></p>
+                    {% if data.seat_heating %}
+                        <div class="row justify-content-center">
+                            <span>Обогрев сидений</span>
+                        </div>
+                    {% endif %}
+                    {% if data.mirror_heating %}
+                        <div class="row justify-content-center">
+                            <span>Обогрев зеркал</span>
+                        </div>
+                    {% endif %}
+                    {% if data.steering_wheel_heating %}
+                        <div class="row justify-content-center">
+                            <span>Обогрев руля</span>
+                        </div>
+                    {% endif %}
+
+                </div>
+                <div class="col">
+                    <p><strong><font size="6">Климат</font></strong></p>
+                    {% if data.climate_control %}
+                        <div class="row justify-content-center">
+                            <span>Климат-контроль</span>
+                        </div>
+                    {% endif %}
+                    <p><strong><font size="6">Мультимедиа</font></strong></p>
+                    {% if data.aux_ipod %}
+                        <div class="row justify-content-center">
+                            <span>AUX или iPod</span>
+                        </div>
+                    {% endif %}
+                    {% if data.bluetooth %}
+                        <div class="row justify-content-center">
+                            <span>Bluetooth</span>
+                        </div>
+                    {% endif %}
+                    {% if data.cd_mp3_player %}
+                        <div class="row justify-content-center">
+                            <span>CD или MP3</span>
+                        </div>
+                    {% endif %}
+                    {% if data.usb %}
+                        <div class="row justify-content-center">
+                            <span>USB</span>
+                        </div>
+                    {% endif %}
+                    {% if data.media_screen %}
+                        <div class="row justify-content-center">
+                            <span>Мультимедийный экран</span>
+                        </div>
+                    {% endif %}
+                    <p><strong><font size="6">Фары</font></strong></p>
+                    {% if data.xenon_lights %}
+                        <div class="row justify-content-center">
+                            <span>Ксеноновые фары</span>
+                        </div>
+                    {% endif %}
+                    {% if data.fog_lights %}
+                        <div class="row justify-content-center">
+                            <span>Противотуманные фары</span>
+                        </div>
+                    {% endif %}
+                    {% if data.led_lights %}
+                        <div class="row justify-content-center">
+                            <span>Светодиодные фары</span>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
 
 {% endblock %}
