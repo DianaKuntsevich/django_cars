@@ -1,29 +1,157 @@
 {% extends 'main.html' %}
-{% block title %}{{ data.brand }}{{ data.model }}{% endblock %}
+{% block title %}{{ data.brand }} {{ data.model }}{% endblock %}
 
 {% block content %}
     <section class="w-100 p-4" style="background-color: royalblue ">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 col-xl-5">
-                <div class="card text-black">
 
-                    <div class="card-body">
-                        
-                            <h5 class="card-title">
-                                {{ data.brand }}{{ data.model }}{{ data.generation_with_years }}{{ data.city_location }}</h5>
-                            <p><strong><font size="6"> Описание</font></strong></p>
-                            <p class="text-muted md-4">{{ data.description }}</p>
-                        
+            <div class="card text-black">
 
+                <div class="card-body">
+
+                    <h1 class="card-title" align="center">
+                        Продажа
+                        {{ data.brand }}{{ data.model }}{{ data.generation_with_years }}{{ data.city_location }}</h1>
+                    <div class="container text-center">
+                        <div class="row align-items-start">
+                            <div class="col-7">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-bs="carousel">
+                                    <ul class="carousel-indicators">
+                                        {% for image in data.images.all %}
+                                            <li data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}
+                                                class="active" {% endif %}></li>
+                                        {% endfor %}
+
+                                    </ul>
+                                    <div class="carousel-inner">
+                                        {% for image in data.images.all %}
+                                            <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                                                <img src="{{ image.image }}" class="d-block w-100" alt="None" height="500">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Предыдущий</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Следующий</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h2 align="left">{{ data.price_byn }} р.</h2>
+                                <p align="left">
+                                    <span style="color: grey">≈ {{ data.price_usd }} $</span>
+                                <p></p>
+                                <p></p>
+                                   
+                                <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit">Оформить в лизинг
+                                    <img alt="ООО «АСБ Лизинг»"
+                                         src="https://static-new.av.by/asset/app/image/logo-finance-commercial.svg">
+                                </button> 
+                                </div>
+                                <p></p>
+                                <p></p>
+                                <div class="card__params" align="left">{{ data.year }}
+                                    г., {{ data.transmission_type }}, {{ data.engine_type }}, {{ data.engine_capacity }}<span>{{ data.mileage_km }} км.</span>
+                                </div>
+                                <p></p>
+                                <p></p>
+                                <div class="card__description" align="left">{{ data.body_type }}, {{ data.drive_type }}, {{ data.color }}</div>
+                                <p></p>
+                                <p></p>
+                                <div class="container text-center" align="left">
+                                    <div class="row align-items-start" align="left">
+                                        <div class="col" align="left">
+                                            <button type="button" class="btn btn-warning">ТОП</button>
+
+                                        </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-success">VIN</button>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <p></p>
+                                <p></p>
+                                <div align="left">
+                                <span style="color: grey">{{ data.city_location }}</span>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="submit">Позвонить продавцу
+                                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
+                                             xmlns="http://www.w3.org/2000/svg" fill="currentcolor">
+                                            <path d="M5.03 15.847c.04-.119.291-.295.755-.526.126-.074.305-.173.537-.299.232-.126.443-.242.632-.348.189-.106.366-.209.532-.308.026-.02.109-.078.248-.174a2.94 2.94 0 0 1 .353-.214.651.651 0 0 1 .284-.07c.132 0 .298.095.497.284.198.189.38.394.546.617.166.222.342.427.527.616.186.189.339.283.458.283.06 0 .134-.016.224-.05a2.32 2.32 0 0 0 .204-.084c.046-.023.125-.07.238-.14a6.14 6.14 0 0 1 .19-.113 10.45 10.45 0 0 0 2.336-1.73c.65-.65 1.226-1.429 1.73-2.337a5.76 5.76 0 0 1 .114-.19c.07-.112.116-.191.14-.238.023-.046.05-.114.084-.204a.673.673 0 0 0 .05-.223c0-.12-.095-.272-.284-.458a5.989 5.989 0 0 0-.616-.527 4.84 4.84 0 0 1-.617-.546c-.189-.2-.283-.365-.283-.497a.65.65 0 0 1 .07-.284 2.72 2.72 0 0 1 .213-.353l.174-.248c.1-.166.202-.343.309-.532.106-.19.222-.4.348-.632.126-.232.225-.41.298-.537.232-.463.407-.715.527-.755a.557.557 0 0 1 .209-.03c.179 0 .412.033.7.1.29.066.516.135.682.208.331.14.683.544 1.054 1.213.338.623.507 1.24.507 1.85 0 .178-.012.352-.035.521a4.29 4.29 0 0 1-.124.572c-.06.212-.108.37-.144.472l-.204.552c-.1.265-.16.428-.179.487a9.006 9.006 0 0 1-.825 1.74c-.524.849-1.238 1.726-2.143 2.63-.905.905-1.781 1.62-2.63 2.143a9.02 9.02 0 0 1-1.74.826c-.06.02-.222.079-.487.179-.266.099-.45.167-.552.203a8.13 8.13 0 0 1-.472.145c-.213.06-.403.1-.572.124A3.89 3.89 0 0 1 8.37 19c-.61 0-1.227-.17-1.85-.507-.67-.371-1.073-.723-1.213-1.054a3.916 3.916 0 0 1-.208-.681 3.268 3.268 0 0 1-.1-.701c0-.093.01-.163.03-.21z"></path>
+                                        </svg>
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-dark">Отправить сообщение
+                                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24"
+                                             xmlns="http://www.w3.org/2000/svg" fill="currentcolor">
+                                            <mask fill="white" id="path-1-inside-1_1479_4863">
+                                                <path d="M11.9999 20.0007C16.418 20.0007 19.9997 16.419 19.9997 12.0008C19.9997 7.58263 16.418 4.00098 11.9999 4.00098C7.58166 4.00098 4 7.58263 4 12.0008C4 12.9676 4.17151 13.8944 4.48576 14.7524C4.57271 14.9897 4.61618 15.1084 4.62706 15.2081C4.63793 15.3077 4.62344 15.4155 4.59446 15.631L4.3093 17.751C4.16841 18.7985 4.09796 19.3223 4.40889 19.6123C4.71981 19.9024 5.2374 19.7959 6.2726 19.5827L7.83492 19.2611C8.10084 19.2064 8.2338 19.179 8.35736 19.1909C8.48092 19.2029 8.62663 19.2638 8.91806 19.3855C9.86656 19.7818 10.9076 20.0007 11.9999 20.0007Z"></path>
+                                            </mask>
+                                            <path d="M7.83492 19.2611L8.21078 21.0868L7.83492 19.2611ZM8.91806 19.3855L8.19948 21.1054L8.91806 19.3855ZM8.35736 19.1909L8.5367 17.3356L8.35736 19.1909ZM4.3093 17.751L2.46197 17.5026L4.3093 17.751ZM6.2726 19.5827L5.89675 17.7571L6.2726 19.5827ZM4.40889 19.6123L5.68043 18.2494L4.40889 19.6123ZM4.59446 15.631L2.74713 15.3825L4.59446 15.631ZM4.62706 15.2081L6.48002 15.0058L4.62706 15.2081ZM18.1357 12.0008C18.1357 15.3896 15.3886 18.1367 11.9999 18.1367V21.8646C17.4475 21.8646 21.8637 17.4485 21.8637 12.0008H18.1357ZM11.9999 5.86494C15.3886 5.86494 18.1357 8.61207 18.1357 12.0008H21.8637C21.8637 6.55319 17.4475 2.13701 11.9999 2.13701V5.86494ZM5.86396 12.0008C5.86396 8.61207 8.61109 5.86494 11.9999 5.86494V2.13701C6.55222 2.13701 2.13604 6.55319 2.13604 12.0008H5.86396ZM6.23601 14.1113C5.99587 13.4557 5.86396 12.7457 5.86396 12.0008H2.13604C2.13604 13.1896 2.34714 14.3331 2.73551 15.3934L6.23601 14.1113ZM6.15663 17.9995L6.44178 15.8794L2.74713 15.3825L2.46197 17.5026L6.15663 17.9995ZM7.45907 17.4354L5.89675 17.7571L6.64845 21.4084L8.21078 21.0868L7.45907 17.4354ZM11.9999 18.1367C11.1587 18.1367 10.3615 17.9685 9.63664 17.6656L8.19948 21.1054C9.37156 21.5951 10.6566 21.8646 11.9999 21.8646V18.1367ZM8.21078 21.0868C8.24451 21.0798 8.2734 21.0739 8.30014 21.0684C8.32671 21.063 8.3486 21.0587 8.3674 21.055C8.38619 21.0513 8.39983 21.0488 8.40979 21.047C8.41975 21.0453 8.42398 21.0447 8.42392 21.0447C8.42381 21.0447 8.41757 21.0456 8.40655 21.0468C8.39539 21.048 8.37829 21.0496 8.35638 21.0507C8.33426 21.0518 8.30747 21.0525 8.27679 21.0519C8.24592 21.0514 8.21284 21.0496 8.17802 21.0462L8.5367 17.3356C8.06566 17.2901 7.60275 17.4058 7.45907 17.4354L8.21078 21.0868ZM9.63664 17.6656C9.50801 17.6119 9.34974 17.5452 9.20866 17.4942C9.06352 17.4417 8.82635 17.3636 8.5367 17.3356L8.17802 21.0462C8.09169 21.0379 8.0251 21.0232 7.98536 21.0128C7.9658 21.0077 7.95194 21.0034 7.94506 21.0012C7.93824 20.999 7.93639 20.9983 7.94086 20.9999C7.94533 21.0015 7.95398 21.0047 7.96814 21.0102C7.98228 21.0158 7.99995 21.0228 8.02244 21.032C8.04492 21.0411 8.07043 21.0516 8.10032 21.064C8.13034 21.0765 8.16265 21.09 8.19948 21.1054L9.63664 17.6656ZM2.46197 17.5026C2.39959 17.9663 2.32013 18.521 2.32584 18.9885C2.33207 19.4985 2.43764 20.3224 3.13734 20.9752L5.68043 18.2494C5.75906 18.3228 5.83067 18.4088 5.8906 18.5048C5.9499 18.5998 5.98853 18.6896 6.01315 18.7645C6.05887 18.9037 6.054 18.985 6.05349 18.9429C6.053 18.903 6.05643 18.8151 6.07502 18.6418C6.09336 18.4709 6.12041 18.2688 6.15663 17.9995L2.46197 17.5026ZM5.89675 17.7571C5.63062 17.8118 5.43088 17.8528 5.26163 17.883C5.09005 17.9135 5.00265 17.923 4.96274 17.9253C4.92071 17.9277 5.00155 17.9172 5.14351 17.9532C5.21994 17.9726 5.31227 18.0049 5.41112 18.0574C5.51102 18.1106 5.6018 18.1761 5.68043 18.2494L3.13734 20.9752C3.83704 21.628 4.66629 21.6763 5.17554 21.6472C5.64229 21.6205 6.19014 21.5028 6.64845 21.4084L5.89675 17.7571ZM2.73551 15.3934C2.74651 15.4235 2.75613 15.4497 2.76502 15.4741C2.77388 15.4984 2.78136 15.5191 2.78787 15.5373C2.79438 15.5555 2.79937 15.5697 2.80327 15.5811C2.80717 15.5924 2.80942 15.5992 2.81052 15.6026C2.81161 15.6061 2.81101 15.6043 2.80936 15.5986C2.8077 15.5928 2.80453 15.5815 2.80069 15.5656C2.79291 15.5333 2.78167 15.4797 2.7741 15.4103L6.48002 15.0058C6.43809 14.6216 6.28152 14.2355 6.23601 14.1113L2.73551 15.3934ZM6.44178 15.8794C6.45761 15.7618 6.52144 15.3854 6.48002 15.0058L2.7741 15.4103C2.77104 15.3822 2.76907 15.3556 2.76794 15.3309C2.76681 15.3062 2.76658 15.2846 2.76676 15.2667C2.76694 15.249 2.76754 15.2351 2.76804 15.2259C2.76855 15.2169 2.76901 15.2116 2.76904 15.2113C2.76906 15.211 2.76878 15.2142 2.7679 15.2221C2.76702 15.23 2.76574 15.2409 2.76384 15.2559C2.76195 15.2711 2.75966 15.2887 2.75681 15.3102C2.75395 15.3318 2.75081 15.3551 2.74713 15.3825L6.44178 15.8794Z"
+                                                  mask="url(#path-1-inside-1_1479_4863)"></path>
+                                            <circle cx="8.82836" cy="11.9885" r="1.02855"></circle>
+                                            <circle cx="11.948" cy="11.9885" r="1.02855"></circle>
+                                            <circle cx="15.0681" cy="11.9885" r="1.02855"></circle>
+                                        </svg>
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-dark">Предложить цену</button>
+                                </div>
+                                
+
+                                
+                                
+
+
+                            </div>
+
+                        </div>
                     </div>
+                    
+
+
                 </div>
             </div>
-        <div class="container px-4 text-center">
-            <p><strong><font size="6"> {{ data.exchange }}</font></strong></p>
-        </div>    
-
-
         </div>
+    
+    <div class="row justify-content-center">
+
+            <div class="card text-black">
+
+                <div class="card-body">
+        <p><strong><font size="6"> Описание</font></strong></p>
+                    <p class="text-muted md-4">{{ data.description }}</p>
+                </div>
+            </div>
+    </div>
+    </div>
+        <div class="row justify-content-center">
+
+            <div class="card text-black">
+
+                <div class="card-body">
+            <p><strong><font size="6"> {{ data.exchange }}</font></strong></p>
+                </div>
+            </div>
+        </div>
+
+    <div class="row justify-content">
+    <div class="card text-black">
+
+                <div class="card-body">
         <div class="container text-center">
             <div class="row align-items-start">
                 <div class="col">
@@ -211,7 +339,13 @@
             </div>
 
         </div>
+                </div>
+    </div>
+    </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
 
 
