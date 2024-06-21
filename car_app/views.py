@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.core.paginator import Paginator
 
 from .models import Auto
+
 
 
 class AutoListView(ListView):
     model = Auto
     template_name = 'aw_cars/car_list.html'
     context_object_name = 'cars'
+    paginate_by = 24
+
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

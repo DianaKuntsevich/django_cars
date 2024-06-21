@@ -99,6 +99,10 @@ class Auto(models.Model):
         return reverse('cars_detail', kwargs={'pk': self.id})
 
 
+
+
+
+
 class Image(models.Model):
     image = models.URLField(max_length=255, unique=True, verbose_name='Изображение')
     auto = models.ForeignKey(Auto, on_delete=models.CASCADE, related_name='images', verbose_name='Автомобиль')
