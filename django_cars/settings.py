@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'mptt',
 
+
     'car_app.apps.CarAppConfig',
 ]
 

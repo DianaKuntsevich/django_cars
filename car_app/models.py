@@ -72,6 +72,7 @@ class Auto(models.Model):
     drive_type = models.CharField(verbose_name='Тип трансмиссии', max_length=255)
     color = models.CharField(verbose_name='Цвет авто', max_length=255)
     mileage_km = models.CharField(verbose_name='Километраж ', max_length=255)
+
     # time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время добавления')
     # time_update = models.DateTimeField(auto_now=True, verbose_name='Время обновления')
     # status = models.CharField(choices=STATUS_OPTIONS, default='published', verbose_name='Статус поста', max_length=10)
@@ -97,8 +98,6 @@ class Auto(models.Model):
 
     def get_absolute_url(self):
         return reverse('cars_detail', kwargs={'pk': self.id})
-
-
 
 
 
