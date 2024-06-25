@@ -34,6 +34,13 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+    'http://127.0.0.1'
+]
+
+CSRF_COOKIE_SECURE = True
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +54,7 @@ INSTALLED_APPS = [
 
 
     'car_app.apps.CarAppConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +162,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+LOGIN_REDIRECT_URL = 'car_list'
+LOGOUT_REDIRECT_URL = 'login'

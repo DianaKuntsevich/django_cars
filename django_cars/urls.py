@@ -22,7 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cars/', include('car_app.urls')),
-
+    path('users/', include('user.urls')),
+    path('users/', include('django.contrib.auth.urls'), name='users'),
 ]
 
 if settings.DEBUG:

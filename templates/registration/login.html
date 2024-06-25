@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h1 align="center">Вход</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Войти</button>
+    </form>
+
+    <a href="{% url 'register' %}" class="drawer__slide-toggle" type="button">
+    <br>
+        <span>Регистрация</span>
+        <br>
+        <small>для тех, кто первый раз на сайте</small>
+    </a>
+
+
+{% endblock %}
