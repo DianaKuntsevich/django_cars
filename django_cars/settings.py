@@ -51,10 +51,12 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'mptt',
+    'rest_framework',
 
 
     'car_app.apps.CarAppConfig',
     'user.apps.UserConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +168,8 @@ REST_FRAMEWORK = {
 LOGIN_REDIRECT_URL = 'cars_list'
 LOGOUT_REDIRECT_URL = 'login'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
