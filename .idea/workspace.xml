@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="092b7dc6-c118-4daf-9882-1562057ed97e" name="Changes" comment="init db">
-      <change afterPath="$PROJECT_DIR$/.idea/django_cars.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/car_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/car_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/car_app/views.py" afterDir="false" />
+    <list default="true" id="092b7dc6-c118-4daf-9882-1562057ed97e" name="Changes" comment="init HTML detail">
+      <change afterPath="$PROJECT_DIR$/api/permission.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_cars/yasg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/django_cars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_cars.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_cars/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cars/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_cars/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_cars/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +21,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -41,27 +44,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.django_cars.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "last_opened_file_path": "C:/Users/Dianas/PycharmProjects/av_parser",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.django_cars.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dianas/PycharmProjects/django_cars&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dianas\PycharmProjects\django_cars\templates\aw_cars" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="django_cars" type="Python.DjangoServer" factoryName="Django server">
       <module name="django_cars" />
@@ -92,8 +101,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
-        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
+        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
       </set>
     </attachedChunks>
   </component>
@@ -108,7 +116,25 @@
       <workItem from="1717349413390" duration="2628000" />
       <workItem from="1717413809168" duration="5124000" />
       <workItem from="1717421240842" duration="82000" />
-      <workItem from="1717431790826" duration="2537000" />
+      <workItem from="1717431790826" duration="3147000" />
+      <workItem from="1717670343415" duration="7226000" />
+      <workItem from="1717845317105" duration="1242000" />
+      <workItem from="1718020611555" duration="2525000" />
+      <workItem from="1718032179967" duration="4444000" />
+      <workItem from="1718190867776" duration="3861000" />
+      <workItem from="1718292745837" duration="6007000" />
+      <workItem from="1718706456723" duration="7520000" />
+      <workItem from="1718796247845" duration="141000" />
+      <workItem from="1718797466330" duration="9000" />
+      <workItem from="1718797501128" duration="4111000" />
+      <workItem from="1718879574725" duration="7492000" />
+      <workItem from="1718967226647" duration="6721000" />
+      <workItem from="1719058302364" duration="837000" />
+      <workItem from="1719228586349" duration="2366000" />
+      <workItem from="1719311704198" duration="6197000" />
+      <workItem from="1719488528144" duration="5321000" />
+      <workItem from="1719572797182" duration="2895000" />
+      <workItem from="1719829842516" duration="7478000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -134,7 +160,135 @@
       <option name="project" value="LOCAL" />
       <updated>1717421283533</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init HTML">
+      <option name="closed" value="true" />
+      <created>1717434694279</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717434694279</updated>
+    </task>
+    <task id="LOCAL-00005" summary="init HTML">
+      <option name="closed" value="true" />
+      <created>1717434837171</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717434837171</updated>
+    </task>
+    <task id="LOCAL-00006" summary="init main.html">
+      <option name="closed" value="true" />
+      <created>1717672624668</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717672624668</updated>
+    </task>
+    <task id="LOCAL-00007" summary="init basis of classes">
+      <option name="closed" value="true" />
+      <created>1717673581213</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717673581213</updated>
+    </task>
+    <task id="LOCAL-00008" summary="init basis of classes">
+      <option name="closed" value="true" />
+      <created>1717678987757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717678987757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="init HTML">
+      <option name="closed" value="true" />
+      <created>1718036103775</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718036103775</updated>
+    </task>
+    <task id="LOCAL-00010" summary="init HTML">
+      <option name="closed" value="true" />
+      <created>1718037419631</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718037419631</updated>
+    </task>
+    <task id="LOCAL-00011" summary="init HTML">
+      <option name="closed" value="true" />
+      <created>1718194880408</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718194880408</updated>
+    </task>
+    <task id="LOCAL-00012" summary="init HTML">
+      <option name="closed" value="true" />
+      <created>1718298523721</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718298523721</updated>
+    </task>
+    <task id="LOCAL-00013" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1718714104583</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718714104583</updated>
+    </task>
+    <task id="LOCAL-00014" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1718887444432</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718887444433</updated>
+    </task>
+    <task id="LOCAL-00015" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1718977097751</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718977097751</updated>
+    </task>
+    <task id="LOCAL-00016" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1719238822808</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1719238822808</updated>
+    </task>
+    <task id="LOCAL-00017" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1719318534032</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1719318534032</updated>
+    </task>
+    <task id="LOCAL-00018" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1719496651488</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719496651488</updated>
+    </task>
+    <task id="LOCAL-00019" summary="init HTML detail">
+      <option name="closed" value="true" />
+      <created>1719579437933</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1719579437933</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +298,10 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="create app" />
     <MESSAGE value="init db" />
-    <option name="LAST_COMMIT_MESSAGE" value="init db" />
+    <MESSAGE value="init main.html" />
+    <MESSAGE value="init basis of classes" />
+    <MESSAGE value="init HTML" />
+    <MESSAGE value="init HTML detail" />
+    <option name="LAST_COMMIT_MESSAGE" value="init HTML detail" />
   </component>
 </project>

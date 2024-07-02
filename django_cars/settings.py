@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'mptt',
     'rest_framework',
+    'django_filters',
+    'drf_yasg',
 
 
     'car_app.apps.CarAppConfig',
@@ -153,9 +155,8 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+INTERNAL_IPS = ('192.168.0.1',)
+DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
@@ -168,8 +169,5 @@ REST_FRAMEWORK = {
 LOGIN_REDIRECT_URL = 'cars_list'
 LOGOUT_REDIRECT_URL = 'login'
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+
+

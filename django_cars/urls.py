@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from .yasg import urlpatterns as yasg_urlpatterns
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cars/', include('car_app.urls')),
@@ -28,6 +30,8 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls'))
 ]
+
+urlpatterns += yasg_urlpatterns
 
 if settings.DEBUG:
     urlpatterns = [path("__debug__/", include("debug_toolbar.urls"))] + urlpatterns
