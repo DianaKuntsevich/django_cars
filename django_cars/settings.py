@@ -168,3 +168,13 @@ REST_FRAMEWORK = {
 
 LOGIN_REDIRECT_URL = 'cars_list'
 LOGOUT_REDIRECT_URL = 'login'
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',  # Замените это на адрес вашего фронтенда
+)
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # если ваш фронтенд работает на этом порту
+    "http://127.0.0.1:3000",
+    # другие разрешенные домены
+]
