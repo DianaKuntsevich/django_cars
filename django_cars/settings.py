@@ -30,6 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'drf_yasg',
+    'corsheaders',
 
 
     'car_app.apps.CarAppConfig',
@@ -71,6 +73,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'django_cars.urls'
@@ -169,9 +172,9 @@ REST_FRAMEWORK = {
 LOGIN_REDIRECT_URL = 'cars_list'
 LOGOUT_REDIRECT_URL = 'login'
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',  # Замените это на адрес вашего фронтенда
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'http://localhost:3000',  # Замените это на адрес вашего фронтенда
+# )
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # если ваш фронтенд работает на этом порту
