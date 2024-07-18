@@ -3,7 +3,15 @@ import React from "react";
 const Car = (props) => {
     return (
         <div className="car">
-           <p>{props.car.id} Авто {props.car.brand} </p>
+           <strong>
+               {this.props.cars.map((el, index) => {
+                   return (
+                       <div key={index}>
+                           {el.brand}
+                       </div>
+                   )
+               })}
+           </strong>
         </div>
     )
 }

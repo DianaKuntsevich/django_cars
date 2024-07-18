@@ -14,12 +14,12 @@ function App() {
 
     return (
         <div className="App">
-
             <button className="btn btn-info" onClick={getAuto}>Обновить авто</button>
+            <h1>Список авто</h1>
             <CarList cars={cars}/>
-
         </div>
     );
 }
 
 export default App;
+
