@@ -1,25 +1,39 @@
 import CarList from "./car_list";
 import axios from "axios";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
-const API_URL = 'http://127.0.0.1:8000/api/auto/'
 
-function App() {
-    const [cars, setCars] = useState([])
-    async function getAuto() {
-        const response = await axios.get(API_URL)
-        setCars(response.data)
-    }
+const App = () => {
+    const [cars, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/auto/') // Замените на ваш URL
+            .then((response) => {
+                setData(response.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
     return (
-        <div className="App">
-            <button className="btn btn-info" onClick={getAuto}>Обновить авто</button>
+        <div>
+            <h1>Data from API</h1>
+
             <h1>Список авто</h1>
+
             <CarList cars={cars}/>
         </div>
     );
-}
+};
 
 export default App;
 
