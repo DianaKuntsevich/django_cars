@@ -11,8 +11,7 @@ const CarList = ({cars}) => {
         <div>
             <h1>Car List</h1>
             <ul>
-                  {cars &&
-                cars.map(car => <Car car={car} key={car.id}/>)}
+                  {cars?.map(car => <Car car={car} key={car.id}/>)}
             </ul>
         </div>
 
