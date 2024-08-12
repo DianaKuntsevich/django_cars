@@ -161,23 +161,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = ('192.168.0.1',)
 DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 24,
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#     'PAGE_SIZE': 24,
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ]
+# }
 
 LOGIN_REDIRECT_URL = 'cars_list'
 LOGOUT_REDIRECT_URL = 'login'
 
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost:3000',  # Замените это на адрес вашего фронтенда
-# )
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8000/',  # Замените это на адрес вашего фронтенда
+)
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # если ваш фронтенд работает на этом порту
-    "http://127.0.0.1:3000",
+    " http://192.168.0.106:3000",
     # другие разрешенные домены
 ]

@@ -1,50 +1,54 @@
-
-import axios from "axios";
-import {useEffect, useState} from "react";
-
-
+import React, { useEffect, useState } from 'react';
 
 const App = () => {
-    const [cars, setData] = useState(null);
+    const [cars, setCars] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-            axios.get("http://127.0.0.1:8000/api/auto/") // Замените на ваш URL
-                .then((response) => {
-                    setData(response.data);
-                    setLoading(false);
-                    console.log(response.data);
-                })
-                .catch((error) => {
-                    setError(error);
-                    setLoading(false);
-                });
-        }, []);
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/auto/');
+                const result = await response.json();
+                 // Логируем результат
+                console.log("API Response:", result);
 
+                // Проверяем, что результат это массив
+                if (Array.isArray(result)) {
+                    setCars(result);
+                } else {
+                    console.error("API returned data is not an array", result);
+                }
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (error) return <div>Error: {error}</div>;
 
-    return (
-        <div className="App">
-
-            <h1>Список авто</h1>
-
-            <div className="cars">
-                {cars && cars.map((cars, index) => {
-                    return(
-                        <div className="car" key={index}>
-                            <h3> Car {index + 1}</h3>
-                            <h2>{cars.results.brand}</h2>
-
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
+    // Проверка, что cars — это массив
+    if (Array.isArray(cars)) {
+    cars.forEach(car => {
+        console.log("Car ID:", car.id, "Car Name:", car.brand);
+    });
+} else {
+    console.error("Expected an array but got:", typeof cars);
 }
 
-export default App;
+    return (
+        <div>
+            <h1>Cars List</h1>
+            <ul>
+                {cars.map(car => <li key={car.id}>{car.brand}</li>)}
+            </ul>
+        </div>
+    );
+};
 
+export default App;
